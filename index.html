@@ -4,33 +4,76 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <title>Hello, world!</title>
+    <title>Mission to Mars</title>
   </head>
+  
   <body>
-    <div class="jumbotron">
-        <h1 class="display-4">Hello, world!</h1>
-        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-        <hr class="my-4">
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-    </div>
+    <div class="container">
+      <div class="jumbotron text-center">
+          <h1 class="display-4">Mission to Mars</h1>
+          <a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a>
+      </div>
 
-    <div class="container-fluid">
+      <div class="container">
         <div class="row">
-          <div class="col-sm">
-            One of three columns
-          </div>
-          <div class="col-sm">
-            One of three columns
-          </div>
-          <div class="col-sm">
-            One of three columns
+          <div class="col-12">
+            <div class="media">
+              <div class="media-body">
+                <h2>Latest Mars News</h2>
+                <h4>{{mars.news_title}}</h4>
+                <p>{{mars.news_paragraph}}</p>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-8 col-lg-8">
+            <h2>Featured Mars Image</h2>
+            <img class="img-responsive" src="{{mars.featured_image}}">
+          </div>
+          <div class="col-sm-12 col-md-4 col-lg-4">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Current Weather on Mars</h4>
+                <p class="card-text">{{mars.weather}}</p>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-md-12">
+                <h4>Mars Facts</h4>
+                {{mars.facts}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <h2 class="text-center" style="margin-top: 80px">Mars Hemispheres</h2>
+        <div class="card-deck">
+          <hr>
+          <div class="col-md-12">
+            <div class="row">
+              {% for hemisphere in mars.hemispheres %}
+              <div class="col-md-6">
+                <div class="card">
+                  <img class="card-img-top" src="{{hemisphere.img_url}}">
+                  <div class="card-body">
+                    <p class="card-text">{{hemisphere.title}}</p>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
