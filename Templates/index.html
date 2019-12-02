@@ -23,7 +23,7 @@
               <div class="media-body">
                 <h2>Latest Mars News</h2>
                 <h5 style="margin-top: 10px">{{mars.news_title}}</h5>
-                <h6 style="margin-top: 10px">{{mars.news_paragraph}}</h6>
+                <p style="margin-top: 10px">{{mars.news_paragraph}}</p>
               </div>
             </div>
           </div>
@@ -62,7 +62,7 @@
             <div class="row">
               {% for hemisphere in mars.hemispheres %}
               <div class="col-md-6">
-                <div class="card">
+                <div class="card" style="margin-bottom: 20px">
                   <img class="card-img-top" src="{{hemisphere.img_url}}">
                   <div class="card-body">
                     <p class="card-text"><strong>{{hemisphere.title}}</strong></p>
