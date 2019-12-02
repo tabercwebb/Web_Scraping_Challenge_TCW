@@ -65,7 +65,7 @@ def scrape():
 
     # Scrape the Full Image URL & Store in Scrape Results Dictionary
     featured_image_url = featured_image_soup.find('figure', class_='lede').a['href']
-    featured_image_complete_url = f'https://wwww.jpl.nasa.gov{featured_image_url}'
+    featured_image_complete_url = f'https://www.jpl.nasa.gov{featured_image_url}'
     mars_scrape_results['featured_image'] = featured_image_complete_url
     
     ######## Mars Weather ########
