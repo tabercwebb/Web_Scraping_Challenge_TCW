@@ -17,24 +17,24 @@
       </div>
 
       <div class="container">
-        <div class="row">
+        <div class="row" style="margin-top: 50px">
           <div class="col-12">
             <div class="media">
               <div class="media-body">
                 <h2>Latest Mars News</h2>
-                <h4>{{mars.news_title}}</h4>
-                <p>{{mars.news_paragraph}}</p>
+                <h5 style="margin-top: 10px">{{mars.news_title}}</h5>
+                <h6 style="margin-top: 10px">{{mars.news_paragraph}}</h6>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="container">
+      <div class="container" style="margin-top: 40px">
         <div class="row">
           <div class="col-sm-12 col-md-8 col-lg-8">
             <h2>Featured Mars Image</h2>
-            <img class="img-responsive" src="{{mars.featured_image}}">
+            <img class="img-fluid" src="{{mars.featured_image}}" alt="Featured Image of Mars">
           </div>
           <div class="col-sm-12 col-md-4 col-lg-4">
             <div class="card">
@@ -44,10 +44,10 @@
               </div>
             </div>
             <br>
-            <div class="row">
+            <div class="row" style="margin-top: 15px">
               <div class="col-md-12">
                 <h4>Mars Facts</h4>
-                {{mars.facts}}
+                {{mars.facts | safe }}
               </div>
             </div>
           </div>
@@ -65,7 +65,7 @@
                 <div class="card">
                   <img class="card-img-top" src="{{hemisphere.img_url}}">
                   <div class="card-body">
-                    <p class="card-text">{{hemisphere.title}}</p>
+                    <p class="card-text"><strong>{{hemisphere.title}}</strong></p>
                   </div>
                 </div>
               </div>
